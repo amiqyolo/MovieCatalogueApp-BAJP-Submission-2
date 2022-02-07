@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginHorizontal="26dp"
+    android:layout_marginBottom="10dp"
+    app:cardBackgroundColor="?attr/colorOnPrimary"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/mcv_poster"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/img_item_poster"
+                android:layout_width="96dp"
+                android:layout_height="146dp"
+                android:contentDescription="@string/app_name"
+                android:scaleType="fitXY"
+                tools:src="@tools:sample/avatars" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/tv_item_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/mcv_poster"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/mcv_poster"
+            app:layout_constraintTop_toTopOf="@+id/mcv_poster"
+            app:layout_constraintVertical_bias=".1" />
+
+        <TextView
+            android:id="@+id/tv_item_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/ic_bg_rating"
+            android:drawablePadding="8dp"
+            android:gravity="start|center_vertical"
+            android:includeFontPadding="false"
+            android:textColor="@color/secondary_light_color"
+            android:textSize="12sp"
+            app:drawableStartCompat="@drawable/ic_star"
+            app:drawableTint="@color/secondary_light_color"
+            app:layout_constraintBottom_toTopOf="@id/tv_item_overview"
+            app:layout_constraintStart_toStartOf="@+id/tv_item_title" />
+
+        <TextView
+            android:id="@+id/tv_item_overview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/primary_light_text_color"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/mcv_poster"
+            app:layout_constraintEnd_toEndOf="@+id/tv_item_title"
+            app:layout_constraintStart_toStartOf="@+id/tv_item_rating" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
